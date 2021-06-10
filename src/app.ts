@@ -19,7 +19,7 @@ const port = process.env.PORT
 
 app.use(json());
 app.use(urlencoded({ extended: true }))
-app.use('/api/user',userRoutes);
+app.use(userRoutes);
 
 
 

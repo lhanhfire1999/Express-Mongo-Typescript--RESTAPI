@@ -1,13 +1,21 @@
 import express, {Request, Response} from "express"
-import {getUser, createUser} from '../controllers/user.controller'
+import {getUser, getOneUser, createUser, updateUser, deleteUser} from '../controllers/user.controller'
 
 const router = express.Router();
 
-// read all
+// Read all
 router.get('/', getUser);
 
-// create 
+// Read one 
+router.get('/:id', getOneUser)
+
+// Create 
 router.post('/create', createUser);
 
+// Update
+router.put('/update/:id', updateUser);
+
+// Delete
+router.delete('/delete/:id',deleteUser);
 
 export {router as userRoutes}
